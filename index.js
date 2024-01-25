@@ -110,7 +110,7 @@ let tien150KwKe = 1100;
 let conLai = 1300;
 
 document.getElementById("btnResult2").onclick= function(){
-let soDienKh = domID("soDien");
+let soDienKh = Number(domID("soDien").value);
 let tongTien = 0;
 if(soDienKh > 0 && soDienKh<=50){
     tongTien = soDienKh * 500;
@@ -208,6 +208,7 @@ document.getElementById("btnResult4").onclick=function(){
         style: 'currency',
         currency: 'USD',
       });
+      domID("textResult4").classList = "alert alert-success";
 }
 // Xử lý phí nhà dân
 function xulyPhiNhaDan(soKenhCaoCap1){

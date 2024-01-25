@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.row__big{
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+.col-3__big{
+    background-color: rgba(169, 169, 169, 0.164);
+    padding: 16px 0;
+    border-radius: 4px;
+}
+.container{
+    margin-top: 5%;
+}
+.clSoKetNoi{
+    display: none;
+}
+.soKetNoi__on{
+    display: inline-block;
+}

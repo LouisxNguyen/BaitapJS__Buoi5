@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bài tập JS Buổi 5</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./index.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row__big">
+            <div class="col-3 col-3__big">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active" id="v-pills-home-tab" data-toggle="pill" data-target="#v-pills-home"
+                        type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Bài tập 1</button>
+                    <button class="nav-link" id="v-pills-profile-tab" data-toggle="pill" data-target="#v-pills-profile"
+                        type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Bài tập
+                        2</button>
+                    <button class="nav-link" id="v-pills-messages-tab" data-toggle="pill"
+                        data-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
+                        aria-selected="false">Bài tập 3</button>
+                    <button class="nav-link" id="v-pills-settings-tab" data-toggle="pill"
+                        data-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
+                        aria-selected="false">Bài tập 4</button>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="tab-content" id="v-pills-tabContent">
+
+                    <!-- Bài tập 1: Quản lý tuyển sinh -->
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                        <!-- Form nhập lương + ngày -->
+                        <h4><i class="fa-solid fa-dong-sign"></i>Quản lý tuyển sinh</h4>
+                        <form>
+                            <div class="form-group">
+                                <label for="diemChuan">Điểm chuẩn hội đồng</label>
+                                <input type="number" class="form-control" id="diemChuan" aria-describedby="help">
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label for="diem1">Điểm môn 1</label>
+                                        <input type="number" class="form-control" id="diem1" aria-describedby="help">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label for="diem2">Điểm môn 2</label>
+                                        <input type="number" class="form-control" id="diem2" aria-describedby="help">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label for="diem3">Điểm môn 3</label>
+                                        <input type="number" class="form-control" id="diem3" aria-describedby="help">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label for="khuVuc">Khu vực</label>
+                                        <form>
+                                            <div class="form-row align-items-center">
+                                                <div class="col-auto my-1">
+                                                    <label class="mr-sm-2 sr-only" for="khuVuc">Khu vực</label>
+                                                    <select class="custom-select mr-sm-2" id="khuVuc">
+                                                        <option selected value="1">Khu vực</option>
+                                                        <option value="2">Khu vực 1</option>
+                                                        <option value="3">Khu vực 2</option>
+                                                        <option value="4">Khu vực 3</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label for="doiTuong">Đối tượng ưu tiên</label>
+                                        <form>
+                                            <div class="form-row align-items-center">
+                                                <div class="col-auto my-1">
+                                                    <label class="mr-sm-2 sr-only" for="doiTuong">Đối tượng ưu
+                                                        tiên</label>
+                                                    <select class="custom-select mr-sm-2" id="doiTuong">
+                                                        <option selected value="1">Đối tượng ưu tiên</option>
+                                                        <option value="2">Ưu tiên 1</option>
+                                                        <option value="3">Ưu tiên 2</option>
+                                                        <option value="4">Ưu tiên 3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p id="textResult1"></p>
+                                <p id="textResult1__2"></p>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="btnResult1">Tính Điểm</button>
+                        </form>
+                    </div>
+
+                    <!-- Bài tập 2: Tính tiền điện -->
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
+
+                        <!-- Form nhập 5 số hạng -->
+                        <h4><i class="fa-solid fa-divide"></i>Tính tiền điện</h4>
+                        <form id="baitap2" class="flex-wrap">
+                            <div class="form-group">
+                                <label for="tenKH">Nhập tên khách hàng</label>
+                                <input type="text" class="form-control" id="tenKH" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="soDien">Nhập số điện tiêu thụ</label>
+                                <input type="number" class="form-control" id="soDien" aria-describedby="emailHelp">
+                                <small id="help" class="form-text text-muted">đơn vị: Kw</small>
+                            </div>
+
+                        </form>
+                        <div>
+                            <p id="textResult2"></p>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="btnResult2">Tính Tiền</button>
+                    </div>
+
+
+                    <!-- Bài tập 3: Tính thuê cá nhân -->
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                        aria-labelledby="v-pills-messages-tab">
+                        <h4><i class="fa-solid fa-dollar-sign"></i>Tính thuế thu nhập</h4>
+                        <form>
+                            <div class="form-group">
+                                <label for="hoTen">Nhập họ và tên: </label>
+                                <input type="text" class="form-control" id="hoTen" aria-describedby="help">
+                            </div>
+                            <div class="form-group">
+                                <label for="thuNhap">Tổng thu nhập trong năm: </label>
+                                <input type="number" class="form-control" id="thuNhap" aria-describedby="help">
+                                <small id="help" class="form-text text-muted">đơn vị: VNĐ</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="nguoiPhuThuoc">Số người phụ thuộc: </label>
+                                <input type="number" class="form-control" id="nguoiPhuThuoc" aria-describedby="help">
+                                <small id="help" class="form-text text-muted">đơn vị: người</small>
+                            </div>
+                            <div>
+                                <p id="textResult3_2"></p>
+                                <p id="textResult3"></p>
+
+                            </div>
+                            <button type="button" class="btn btn-primary" id="btnResult3">Tính</button>
+                        </form>
+                    </div>
+
+                    <!-- Bài tập 4: Tính diện tích và chu vi HCN -->
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab">
+                        <h4><i class="fa-solid fa-calculator"></i>Tính tiền cáp</h4>
+                        <form id="baitap4">
+                            <div class="form-group">
+                                <label for="doiTuongKH">Đối tượng khách hàng</label>
+                                <form>
+                                    <div class="form-row align-items-center">
+                                        <div class="col-auto my-1">
+                                            <label class="mr-sm-2 sr-only" for="doiTuongKH">Đối tượng ưu
+                                                tiên</label>
+                                            <select class="custom-select mr-sm-2" id="doiTuongKH">
+                                                <option selected value="1">Đối tượng</option>
+                                                <option value="2">Nhà dân</option>
+                                                <option id="doanhNghiep" value="3">Doanh nghiệp</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="maKH">Mã khách hàng: </label>
+                                        <input type="number" class="form-control" id="maKH" aria-describedby="help">
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="soKenhCaoCap">Số kênh cao cấp: </label>
+                                        <input type="number" class="form-control" id="soKenhCaoCap"
+                                            aria-describedby="help">
+                                    </div>
+                                    <div class="col-4 clSoKetNoi" id="clSoKetNoi">
+                                        <label for="soKetNoi">Số kết nối: </label>
+                                        <input type="number" class="form-control" id="soKetNoi"
+                                            aria-describedby="help">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                        <div id="textRS">
+                            <p id="textResult4"></p>
+                            <p id="textResult4__2"></p>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="btnResult4">Tính</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
